@@ -1,3 +1,6 @@
+# MyPage
+Разработка личного сайта-визитки (резюме) (HTML5, CSS, JS, React, Bootstrap 4)
+
 # nano-react-app-template
 
 The template project for [nano-react-app](https://github.com/adrianmcli/nano-react-app).
