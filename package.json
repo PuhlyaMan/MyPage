@@ -1,8 +1,8 @@
 {
-  "name": "myPage",
+  "name": "MyPage",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/PuhlyaMan/mePage.git",
+  "repository": "https://github.com/PuhlyaMan/myPage.git",
   "author": "Sergey <dr.zad1994@gmail.com>",
   "license": "MIT",
   "scripts": {

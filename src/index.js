@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import Avatar from './components/Avatar';
 
 ReactDOM.render(
-    <App />,
+    <Avatar />,
     document.getElementById('root'),
 );

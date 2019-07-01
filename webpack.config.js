@@ -9,9 +9,9 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: path.join(__dirname, "dist"), //папка с ресурсами и index.html
+    contentBase: [path.join(__dirname, "public"), path.join(__dirname, "dist")], //папка с ресурсами и index.html
     compress: true,
-    port: 8080,
+    port: 3000,
     watchContentBase: true,
     progress: true
   },
@@ -47,7 +47,7 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif|ico)$/,
         use: ["file-loader"]
-      }
+      },
     ]
   }
 };

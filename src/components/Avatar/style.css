@@ -1,0 +1,24 @@
+.avatar {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.img {
+    max-width: 20%;
+    max-height: 20%;
+}
+
+.fio {
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+}
+
+.birthday {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.sity {
+    font-size: 20px;
+    font-weight: bold;
+}
