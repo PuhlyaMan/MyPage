@@ -1,31 +1,34 @@
 const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js", //входные данные
+  context: path.join(__dirname, "src"),
+  //Входные данные (entry: "./src/index.js",)
+  entry: {
+    index: "./index.js"
+  },
   output: {
-    //выходные данные
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist")
+    //Выходные данные
+    path: path.join(__dirname, "dist"),
+    filename: "[name].js" //index.js
   },
-
-  devServer: {
-    contentBase: [path.join(__dirname, "public"), path.join(__dirname, "dist")], //папка с ресурсами и index.html
-    compress: true,
-    port: 3000,
-    watchContentBase: true,
-    progress: true
-  },
+  mode: "development",
 
   module: {
     //массив правил
     rules: [
+      //Статические ресурсы
+      {
+        test: /\.(png|svg|jpg|gif|ico)$/,
+        use: ["file-loader"]
+      },
       //Обработка js файлов
       {
-        //все файлы с расширением .m и .js
+        //Все файлы с расширением .m и .js
         test: /\.m?js$/,
-        //из каталогов node_modules или bower_components
+        //Из каталогов node_modules или bower_components
         exclude: /node_modules/,
-        //лоадер
+        //Лоадер
         use: {
           loader: "babel-loader"
         }
@@ -34,20 +37,21 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          "style-loader", //второй обработчик
+          "style-loader", //Второй обработчик
           {
-            loader: "css-loader", //первый обработчик
+            loader: "css-loader", //Первый обработчик
             options: {
-              modules: true //стили применяются только к тем компонентам, в которые они импортированы
+              modules: true //Стили применяются только к тем компонентам, в которые они импортированы
             }
           }
         ]
-      },
-      //статические ресурсы
-      {
-        test: /\.(png|svg|jpg|gif|ico)$/,
-        use: ["file-loader"]
-      },
+      }
     ]
-  }
+  },
+
+  /*plugins: [
+    new HtmlWebpackPlugin({
+      title: "Webpack app"
+    }),
+  ],*/
 };
