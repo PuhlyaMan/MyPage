@@ -1,2 +1,2 @@
 # MyPage
-Разработка личного сайта-визитки (резюме) (HTML5, CSS, JS, React, Bootstrap 4)
+Разработка личного сайта-визитки (резюме) (HTML5, CSS, JS, React, Webpack, Bootstrap 4)

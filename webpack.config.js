@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const isDev = process.env.NODE_ENV === 'development';
+//const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   //state: 'errors-only',
@@ -18,6 +18,10 @@ module.exports = {
     //filename: "js/[name].js" 
     filename: "main.[name].js"
   },
+
+  /*resolve: {
+    extensions: ['.js', '.jsx']
+  },*/
 
   module: {
     //массив правил
@@ -37,8 +41,8 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          //"style-loader",
-          MiniCssExtractPlugin.loader,
+          "style-loader",
+          //MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {

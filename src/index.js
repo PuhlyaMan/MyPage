@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Info from './components/Info';
+import ElContainer from './components/ElContainer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
-    <Info />,
+    <ElContainer />,
     document.getElementById('root'),
 );
