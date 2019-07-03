@@ -6,7 +6,7 @@ import Info from '../Info';
 const ElContainer = () => {
     return (
         <Container>
-            {/*<Info />*/}
+            <Info />
             <Menu />
         </Container>
     )

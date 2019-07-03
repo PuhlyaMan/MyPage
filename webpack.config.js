@@ -1,84 +1,60 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
-//const isDev = process.env.NODE_ENV === 'development';
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  //state: 'errors-only',
+  //stats: 'errors-only',
 
-  //Входные данные (entry: "./src/index.js",)
   entry: {
-    bundle: "./src/index.js"
-  },
-  output: {
-    //Выходные данные
-    path: path.join(__dirname, "dist"),
-    //filename: "js/[name].js" 
-    filename: "main.[name].js"
+    bundle: './src/index.js'
   },
 
-  /*resolve: {
-    extensions: ['.js', '.jsx']
-  },*/
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'main.[name].js'
+  },
 
   module: {
-    //массив правил
     rules: [
-      //Обработка js файлов
       {
-        //Все файлы с расширением .m и .js
         test: /\.(js|jsx)$/,
-        //Из каталогов node_modules или bower_components
-        exclude: /node_modules/,
-        //Лоадер
+        exclude: /node_module/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader'
         }
       },
-      //Обработка css
       {
         test: /\.css$/,
         use: [
-          "style-loader",
-          //MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              modules: true
-            }
-          }
+          MiniCssExtractPlugin.loader,
+          'css-loader'
         ]
       },
-      //Статические ресурсы
       {
-        test: /\.(png|svg|jpg|gif|ico)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "image/[name].[ext]"
-            }
+        test: /\.(png|jpg)$/,
+        use:  [{
+          loader: 'file-loader',
+          options: {
+            name: 'images/[name].[ext]'
           }
-        ]
+        }]
       }
     ]
   },
 
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      favicon: "./src/favicon.ico"
+      template: './src/index.html',
+      favicon: './src/favicon.ico'
     }),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      //filename: "css/[name].css"
-      filename: "main.[name].css"
+      filename: 'main.[name].css'
     })
   ],
 
   devServer: {
-    port: 9000
+    port: 9000,
   }
 };
