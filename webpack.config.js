@@ -1,31 +1,31 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  context: path.join(__dirname, "src"),
+  //state: 'errors-only',
+
   //Входные данные (entry: "./src/index.js",)
   entry: {
-    index: "./index.js"
+    bundle: "./src/index.js"
   },
   output: {
     //Выходные данные
     path: path.join(__dirname, "dist"),
-    filename: "[name].js" //index.js
+    //filename: "js/[name].js" 
+    filename: "main.[name].js"
   },
-  mode: "development",
 
   module: {
     //массив правил
     rules: [
-      //Статические ресурсы
-      {
-        test: /\.(png|svg|jpg|gif|ico)$/,
-        use: ["file-loader"]
-      },
       //Обработка js файлов
       {
         //Все файлы с расширением .m и .js
-        test: /\.m?js$/,
+        test: /\.(js|jsx)$/,
         //Из каталогов node_modules или bower_components
         exclude: /node_modules/,
         //Лоадер
@@ -37,11 +37,24 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          "style-loader", //Второй обработчик
+          //"style-loader",
+          MiniCssExtractPlugin.loader,
           {
-            loader: "css-loader", //Первый обработчик
+            loader: "css-loader",
             options: {
-              modules: true //Стили применяются только к тем компонентам, в которые они импортированы
+              modules: true
+            }
+          }
+        ]
+      },
+      //Статические ресурсы
+      {
+        test: /\.(png|svg|jpg|gif|ico)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "image/[name].[ext]"
             }
           }
         ]
@@ -49,9 +62,19 @@ module.exports = {
     ]
   },
 
-  /*plugins: [
+  plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "Webpack app"
+      template: "./src/index.html",
+      favicon: "./src/favicon.ico"
     }),
-  ],*/
+    new MiniCssExtractPlugin({
+      //filename: "css/[name].css"
+      filename: "main.[name].css"
+    })
+  ],
+
+  devServer: {
+    port: 9000
+  }
 };

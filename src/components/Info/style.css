@@ -1,8 +1,8 @@
-.avatar {
+.info {
     font-family: 'Times New Roman', Times, serif;
 }
 
-.img {
+.avatar {
     max-width: 20%;
     max-height: 20%;
 }
@@ -21,4 +21,9 @@
 .sity {
     font-size: 20px;
     font-weight: bold;
+}
+
+.education {
+    font-size: 20px;
+    font-style: italic;
 }

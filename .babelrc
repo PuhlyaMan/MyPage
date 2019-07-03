@@ -1,0 +1,10 @@
+/* Вместо данного файла можно добавить следующи код в package.json:
+   "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]}
+*/
+{
+    "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
