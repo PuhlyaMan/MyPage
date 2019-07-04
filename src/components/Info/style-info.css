@@ -12,7 +12,7 @@
     color: red;
 }
 
-.birthday {
+.birthday, .education {
     font-size: 20px;
     font-style: italic;
 }
@@ -20,9 +20,4 @@
 .sity {
     font-size: 20px;
     font-weight: bold;
-}
-
-.education {
-    font-size: 20px;
-    font-style: italic;
 }
