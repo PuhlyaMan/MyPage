@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+//const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   //stats: 'errors-only',
@@ -34,7 +35,10 @@ module.exports = {
               modules: true,
               localIdentName: '[path][name]__[local]--[hash:base64:5]',
             }
-          }    
+          },
+          {
+            loader: 'postcss-loader'
+          }
         ]
       },
       {
@@ -59,6 +63,16 @@ module.exports = {
       filename: 'main.[name].css'
     })
   ],
+
+  /*optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserWebpackPlugin({
+        test: /\.js(\?.*)?$/i,
+        exclude: /node_modules/
+      }),
+    ],
+  },*/
 
   devServer: {
     port: 9000,
