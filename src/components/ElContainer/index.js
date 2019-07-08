@@ -13,19 +13,19 @@ class ElContainer extends React.Component {
     }
   }
 
-  /*updateAction = (value) => {
+  updateAction = (value) => {
+    console.log('work! - ' + value);
     this.setState({
       action: value,    
     });
-  }*/
+  }
 
   render() {
     return (
       <Container>
         <AboutMe />
-        {/*<Menu updateAction={this.updateAction}/>*/}
-        <Menu />
-        <TextData />
+        <Menu updateAction={this.updateAction}/>
+        <TextData action={this.state.action}/>
       </Container>
     );
   }
