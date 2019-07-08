@@ -5,5 +5,10 @@
       "@babel/react"
     ]}
 */{
-    "presets": ["@babel/preset-env", "@babel/preset-react"] //пресеты для транспайлинга кода
+    "presets": ["@babel/preset-env", "@babel/preset-react"], //пресеты для транспайлинга кода
+    "plugins": [
+      [
+        "@babel/plugin-proposal-class-properties" // поддержка экспериментального синтаксиса
+      ]
+    ]
 }
