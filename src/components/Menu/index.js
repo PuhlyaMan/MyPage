@@ -8,6 +8,7 @@ class Menu extends React.Component {
     super(props);
   }
 
+  //TODO: Композиция?
   render() {
     return (
       <Row className={style.menu}>
