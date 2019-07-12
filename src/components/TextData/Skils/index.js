@@ -1,9 +1,7 @@
 import React from 'react';
 
-const Skils = () => {
+export default  () => {
     return (
         <div>Навыки</div>
     );
 } 
-
-export default Skils;
