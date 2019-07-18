@@ -2,18 +2,21 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-//const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-  //stats: 'errors-only',
+  // stats: 'errors-only',
 
   entry: {
-    bundle: './src/index.js'
+    bundle: './src/index.jsx',
   },
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'main.[name].js'
+    filename: 'main.[name].js',
+  },
+
+  resolve: {
+    extensions: ['.jsx', '.js'],
   },
 
   module: {
@@ -22,49 +25,46 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_module/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          { 
+          {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[path][name]__[local]--[hash:base64:5]',
-            }
-          },
-          {
-            loader: 'postcss-loader'
+              localIdentName: '[name]__[local]--[hash:base64:5]',
+            },
           }
-        ]
+        ],
       },
       {
         test: /\.(png|jpg)$/,
-        use:  [{
+        use: [{
           loader: 'file-loader',
           options: {
-            name: 'images/[name].[ext]'
-          }
-        }]
+            name: 'images/[name].[ext]',
+          },
+        }],
       }
-    ]
+    ],
   },
 
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      favicon: './src/favicon.ico'
+      favicon: './src/favicon.ico',
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'main.[name].css'
+      filename: 'main.[name].css',
     })
   ],
 
-  /*optimization: {
+  /* optimization: {
     minimize: true,
     minimizer: [
       new TerserWebpackPlugin({
@@ -72,9 +72,9 @@ module.exports = {
         exclude: /node_modules/
       }),
     ],
-  },*/
+  }, */
 
   devServer: {
     port: 9000,
-  }
+  },
 };
