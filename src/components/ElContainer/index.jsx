@@ -10,12 +10,14 @@ class ElContainer extends React.Component {
     super(props);
     this.state = {
       action: 0,
+      // press: false,
     };
   }
 
   updateAction = (value) => {
     this.setState({
       action: value,
+      // press: !this.state.press,
     });
   }
 

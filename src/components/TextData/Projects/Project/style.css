@@ -1,0 +1,25 @@
+.projectDiv {
+  margin: 50px 0;
+  font-family: 'Courier New', Courier, monospace,
+}
+
+.company {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.post, .project, .role, .technologys {
+  font-size: 20px;
+}
+
+.subsystem {
+
+}
+
+.duties{  
+
+}
+
+.definition {
+  font-weight: bold;
+}
