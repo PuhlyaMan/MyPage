@@ -20,12 +20,24 @@ export default function Project(props) {
         <span className={style.definition}>Роль: </span>
         {role}
       </div>
-      { subsystem ? (
+      { subsystem.length > 0 ? (
         <div className={style.subsystem}>
-          {subsystem}
+          <span className={style.definition}>Участие в разработке подсистем: </span>
+          {subsystem.map(elem => (
+            <li className={style.listitem} key={elem.id}>
+              {elem.name}
+            </li>
+          ))}
         </div>
       ) : null}
-      <div className={style.duties}>{duties}</div>
+      <div className={style.duties}>
+        <span className={style.definition}>Обязанности: </span>
+        {duties.map(elem => (
+          <li className={style.listitem} key={elem.id}>
+            {elem.duty}
+          </li>
+        ))}
+      </div>
       <div className={style.technologys}>
         <span className={style.definition}>Технологии: </span>
         {technologys}
@@ -34,14 +46,20 @@ export default function Project(props) {
   );
 }
 
-Project.defaultProps = { subsystem: null };
+Project.defaultProps = { subsystem: [] };
 
 Project.propTypes = {
   company: PropTypes.string.isRequired,
   post: PropTypes.string.isRequired,
   project: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired,
-  subsystem: Project.string,
-  duties: PropTypes.string.isRequired,
+  subsystem: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+  })),
+  duties: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    duty: PropTypes.string,
+  })).isRequired,
   technologys: PropTypes.string.isRequired,
 };
