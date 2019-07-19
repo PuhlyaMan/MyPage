@@ -7,6 +7,7 @@ export default function Menu(props) {
   // TODO: Композиция?
   return (
     <Row>
+      {/* TODO: <Col> в отдельный элемент */}
       <Col>
         <div
           className={style.menuitem}
@@ -38,6 +39,4 @@ export default function Menu(props) {
   );
 }
 
-Menu.propTypes = {
-  updateAction: PropTypes.func.isRequired,
-};
+Menu.propTypes = { updateAction: PropTypes.func.isRequired };
