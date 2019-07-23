@@ -1,0 +1,16 @@
+.menuitem {
+  font-size: 24px;
+  background-color: #00ffff;
+  border-radius: 15px;
+  text-align: center;
+  margin: 10px 0;
+  padding: 3px;
+}
+
+.menuitem:hover {
+  border: 1px solid #000000;
+  background-color: #34DC28;
+  cursor: pointer;
+  /*font-weight: bold;*/
+  /*text-decoration: underline;*/
+}

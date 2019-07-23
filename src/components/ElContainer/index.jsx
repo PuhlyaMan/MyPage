@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import AboutMe from '../AboutMe';
-import Menu from '../Menu';
-import TextData from '../TextData';
+import AboutMe from './AboutMe';
+import Menu from './Menu';
+import TextData from './TextData';
 
 class ElContainer extends React.Component {
 
