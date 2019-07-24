@@ -1,0 +1,22 @@
+.block {
+  margin: 0 0 50px 0;
+}
+
+.caption {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+}
+
+.company {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.from, .listitem {
+  font-size: 20px;
+}
+
+.listitem {
+  padding: 0 0 0 30px;
+}

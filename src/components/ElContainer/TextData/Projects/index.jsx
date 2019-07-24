@@ -1,6 +1,6 @@
 import React from 'react';
 import Project from './Project';
-import projects from './projects';
+import projects from './data/projects';
 
 export default function Projects() {
   const projElem = projects.map(element => (
@@ -18,6 +18,9 @@ export default function Projects() {
 
   return (
     <div>
+      <div style={{ fontWeight: 'bold', fontSize: '40px', textAlign: 'center' }}>
+        Проекты
+      </div>
       {projElem}
     </div>
   );

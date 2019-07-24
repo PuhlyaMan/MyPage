@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Row, Col } from 'react-bootstrap';
 import Projects from './Projects';
 import Skils from './Skils';
-import Summary from './Summary';
+import Another from './Another';
 
 export default function TextData(props) {
   const { action } = props;
@@ -14,7 +14,7 @@ export default function TextData(props) {
   } else if (action === 2) {
     elem = <Skils />;
   } else if (action === 3) {
-    elem = <Summary />;
+    elem = <Another />;
   }
 
   return (
@@ -24,6 +24,4 @@ export default function TextData(props) {
   );
 }
 
-TextData.propTypes = {
-  action: PropTypes.number.isRequired,
-};
+TextData.propTypes = { action: PropTypes.number.isRequired };
