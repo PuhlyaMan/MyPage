@@ -1,11 +1,12 @@
 import React from 'react';
-import Block from './Block';
+import Characteristics from './Characteristics';
+import Recommendations from './Recommendations';
 
 export default function Another() {
   return (
     <div>
-      <Block code="char">О себе</Block>
-      <Block code="rec">Рекомендации</Block>
+      <Characteristics>О себе</Characteristics>
+      <Recommendations>Рекомендации</Recommendations>
     </div>
   );
 }

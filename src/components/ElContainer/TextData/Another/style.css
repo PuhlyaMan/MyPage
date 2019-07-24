@@ -20,3 +20,8 @@
 .listitem {
   padding: 0 0 0 30px;
 }
+
+.image {
+  max-width: 0.7em;
+  margin: 0 0 0 10px;
+}
