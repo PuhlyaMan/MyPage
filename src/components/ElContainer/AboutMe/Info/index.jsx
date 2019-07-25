@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import style from '../style.css';
 
 export default function Info(props) {
-  const { nameClass, title, value } = props;
+  const { title, children } = props;
   return (
-    <p className={nameClass}>
-      <span style={{ fontWeight: 'bold' }}>{title}</span>
-      {value}
-    </p>
+    <div>
+      <span className={style.title}>{title}</span>
+      {children}
+    </div>
   );
 }
 
 Info.propTypes = {
-  nameClass: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import recommendations from './data/recommendations';
 import style from '../style.css';
 import Info from './images/info.png';
@@ -13,16 +14,24 @@ export default function Recommendations(props) {
     </div>
   ));
 
+  // TODO: настройить react/jsx-wrap-multilines
   return (
     <div className={style.block}>
       <div className={style.caption}>
         { children }
-        <img 
-          className={style.image}
-          src={Info}
-          alt="Ошибка загрузки"
-          title="Контактные для связи рекомендатора можно, при необходимости, спросить"
-        />
+        <OverlayTrigger
+          key="right"
+          placement="right"
+          overlay={
+            <Tooltip id="tooltip-right">При необходимости, спрашивайте контактные данные для связи с рекомендатором</Tooltip>
+          }
+        >
+          <img
+            className={style.image}
+            src={Info}
+            alt="Ошибка загрузки"
+          />
+        </OverlayTrigger>
       </div>
 
       <div className={style.container}>{recommendation}</div>
