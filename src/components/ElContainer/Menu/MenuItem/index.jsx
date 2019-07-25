@@ -4,22 +4,24 @@ import { Col } from 'react-bootstrap';
 import style from './style.css';
 
 export default function MenuItem(props) {
-  const { menuItem, showMenuItem, item } = props;
+  const { children, showMenuItem, item, active } = props;
+  const styleItem = (item === active) ? style.menuitem_active : style.menuitem;
   return (
     <Col>
       <div
-        className={style.menuitem}
+        className={styleItem}
         rule="menuitem"
         onClick={() => showMenuItem(item)}
       >
-        { menuItem }
+        { children }
       </div>
     </Col>
   );
 }
 
 MenuItem.propTypes = {
-  menuItem: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
   showMenuItem: PropTypes.func.isRequired,
   item: PropTypes.number.isRequired,
+  active: PropTypes.number.isRequired,
 };

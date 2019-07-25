@@ -26,7 +26,7 @@ class ElContainer extends React.Component {
     return (
       <Container>
         <AboutMe />
-        <Menu updateAction={this.updateAction} />
+        <Menu active={action} updateAction={this.updateAction} />
         <TextData action={action} />
       </Container>
     );

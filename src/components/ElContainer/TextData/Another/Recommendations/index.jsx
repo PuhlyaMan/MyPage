@@ -23,7 +23,9 @@ export default function Recommendations(props) {
           key="right"
           placement="right"
           overlay={
-            <Tooltip id="tooltip-right">При необходимости, спрашивайте контактные данные для связи с рекомендатором</Tooltip>
+            <Tooltip id="tooltip-right">
+              При необходимости, спрашивайте контактные данные для связи с рекомендатором
+            </Tooltip>
           }
         >
           <img
