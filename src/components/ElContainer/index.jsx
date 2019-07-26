@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import AboutMe from './AboutMe';
 import Menu from './Menu';
 import TextData from './TextData';
+import Form from './Form';
 
 class ElContainer extends React.Component {
 
@@ -28,6 +29,7 @@ class ElContainer extends React.Component {
         <AboutMe />
         <Menu active={action} updateAction={this.updateAction} />
         <TextData action={action} />
+        <Form />
       </Container>
     );
   }

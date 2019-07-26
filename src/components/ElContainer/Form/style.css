@@ -1,0 +1,17 @@
+.form {
+  border: 3px solid #ced4da;
+  border-radius: 15px;
+  margin: 40px 0;
+  padding: 15px;
+}
+
+.header {
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
+
+.label {
+  font-size: 20px;
+}

@@ -208,7 +208,7 @@ const skils = [
         level: 'Средний',
       },
       {
-        id: 1,
+        id: 2,
         name: 'Redmine',
         colYear: 1,
         lastYear: 'Настоящее время',
@@ -228,21 +228,21 @@ const skils = [
         level: 'Средний',
       },
       {
-        id: 1,
+        id: 2,
         name: 'IntelliJ IDEA',
         colYear: 4,
         lastYear: 'Настоящее время',
         level: 'Хороший',
       },
       {
-        id: 1,
+        id: 3,
         name: 'WebStorm',
         colYear: 1,
         lastYear: 'Настоящее время',
         level: 'Средний',
       },
       {
-        id: 1,
+        id: 4,
         name: 'Visual Studio Code',
         colYear: 1,
         lastYear: 'Настоящее время',
