@@ -4,9 +4,9 @@ import { Row } from 'react-bootstrap';
 import MenuItem from './MenuItem';
 
 export default function Menu(props) {
-  const { updateAction, active } = props;
+  const { updateActive, active } = props;
   const showMenuItem = (value) => {
-    updateAction(value);
+    updateActive(value);
   };
   // TODO: Композиция?
   return (
@@ -19,6 +19,6 @@ export default function Menu(props) {
 }
 
 Menu.propTypes = {
-  updateAction: PropTypes.func.isRequired,
+  updateActive: PropTypes.func.isRequired,
   active: PropTypes.number.isRequired,
 };

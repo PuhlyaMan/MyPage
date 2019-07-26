@@ -1,39 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import AboutMe from './AboutMe';
 import Menu from './Menu';
 import TextData from './TextData';
 import Form from './Form';
 
-class ElContainer extends React.Component {
+export default function ElContainer() {
+  const [active, setActive] = useState(0);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      action: 0,
-      // press: false,
-    };
-  }
+  const updateActive = (value) => {
+    setActive(value);
+  };
 
-  updateAction = (value) => {
-    this.setState({
-      action: value,
-      // press: !this.state.press,
-    });
-  }
-
-  render() {
-    const { action } = this.state;
-    return (
-      <Container>
-        <AboutMe />
-        <Menu active={action} updateAction={this.updateAction} />
-        <TextData action={action} />
-        <Form />
-      </Container>
-    );
-  }
-
+  return (
+    <Container>
+      <AboutMe />
+      <Menu active={active} updateActive={updateActive} />
+      <TextData active={active} />
+      <Form />
+    </Container>
+  );
 }
-
-export default ElContainer;

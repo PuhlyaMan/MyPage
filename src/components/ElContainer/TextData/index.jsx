@@ -6,14 +6,14 @@ import Skils from './Skils';
 import Another from './Another';
 
 export default function TextData(props) {
-  const { action } = props;
+  const { active } = props;
 
   let elem;
-  if (action === 1) {
+  if (active === 1) {
     elem = <Projects />;
-  } else if (action === 2) {
+  } else if (active === 2) {
     elem = <Skils />;
-  } else if (action === 3) {
+  } else if (active === 3) {
     elem = <Another />;
   }
 
@@ -24,4 +24,4 @@ export default function TextData(props) {
   );
 }
 
-TextData.propTypes = { action: PropTypes.number.isRequired };
+TextData.propTypes = { active: PropTypes.number.isRequired };
