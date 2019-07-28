@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+// TODO: Material-ui
 import { Container } from 'react-bootstrap';
 import AboutMe from './AboutMe';
 import Menu from './Menu';
 import TextData from './TextData';
-import Form from './Form';
 
 export default function ElContainer() {
   const [active, setActive] = useState(0);
@@ -17,7 +17,6 @@ export default function ElContainer() {
       <AboutMe />
       <Menu active={active} updateActive={updateActive} />
       <TextData active={active} />
-      <Form />
     </Container>
   );
 }

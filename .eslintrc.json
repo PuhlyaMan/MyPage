@@ -22,7 +22,8 @@
     },
 
     "plugins": [
-        "react"
+        "react",
+        "react-hooks"
     ],
 
     "rules": {
@@ -40,10 +41,12 @@
             "classes": "always",
             "switches": "never"
         }],
-        "object-curly-newline": ["error", { "multiline": true }],
+        "object-curly-newline": ["error", { "ObjectExpression": "always", "ObjectPattern": "never" }],
         "no-alert": 0,
         "jsx-a11y/click-events-have-key-events": 0,
         "jsx-a11y/no-static-element-interactions": 0,
-        "react/jsx-wrap-multilines": [0, {"prop": "parens-new-line"}] 
+        "react/jsx-wrap-multilines": [0, {"prop": "parens-new-line"}],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
     }
 }

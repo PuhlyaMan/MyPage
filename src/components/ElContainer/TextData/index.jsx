@@ -24,4 +24,6 @@ export default function TextData(props) {
   );
 }
 
-TextData.propTypes = { active: PropTypes.number.isRequired };
+TextData.propTypes = {
+  active: PropTypes.number.isRequired,
+};

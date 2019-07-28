@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from './style.css';
+import style from '../style.css';
 
 export default function Project(props) {
   const { company, post, project, role, subsystem, duties, technologys } = props;
 
   return (
-    <div className={style.projectDiv}>
+    <div className={style.job}>
       <div className={style.company}>{company}</div>
       <div className={style.post}>
         <span className={style.definition}>Должность: </span>
@@ -46,7 +46,9 @@ export default function Project(props) {
   );
 }
 
-Project.defaultProps = { subsystem: [] };
+Project.defaultProps = {
+  subsystem: [],
+};
 
 Project.propTypes = {
   company: PropTypes.string.isRequired,

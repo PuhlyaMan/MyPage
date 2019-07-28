@@ -1,12 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import recommendations from './data/recommendations';
 import style from '../style.css';
 import Info from './images/info.png';
 
-export default function Recommendations(props) {
-  const { children } = props;
+export default function Recommendations() {
   const recommendation = recommendations.map(element => (
     <div key={element.id} className={style.recommendation}>
       <div className={style.company}>{element.company}</div>
@@ -18,7 +16,7 @@ export default function Recommendations(props) {
   return (
     <div className={style.block}>
       <div className={style.caption}>
-        { children }
+        Рекомендации
         <OverlayTrigger
           key="right"
           placement="right"
@@ -40,5 +38,3 @@ export default function Recommendations(props) {
     </div>
   );
 }
-
-Recommendations.propTypes = { children: PropTypes.string.isRequired };
