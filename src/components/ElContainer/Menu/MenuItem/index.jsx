@@ -1,29 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Accordion } from 'react-bootstrap';
 import style from './style.css';
 
 export default function MenuItem(props) {
-  const { active, item, children } = props;
+  const { elem, active, showActiveMenu, item, children } = props;
 
+  const nameclass = active ? style.body_active : style.body_non_active;
   return (
-    <Card className={style.card}>
-      <Card.Header className={style.header}>
-        <Accordion.Toggle as={Card.Header} eventKey={active}>
-          {children}
-        </Accordion.Toggle>
-      </Card.Header>
-      <Accordion.Collapse eventKey={active}>
-        <Card.Body>
-          {item()}
-        </Card.Body>
-      </Accordion.Collapse>
-    </Card>
+    <div className={style.card}>
+      <div className={style.header} onClick={() => showActiveMenu(!active, !active ? elem : 0)}>
+        {children}
+      </div>
+      <div className={nameclass}>
+        {item()}
+      </div>
+    </div>
   );
 }
 
 MenuItem.propTypes = {
   children: PropTypes.string.isRequired,
   item: PropTypes.func.isRequired,
-  active: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired,
+  elem: PropTypes.number.isRequired,
+  showActiveMenu: PropTypes.func.isRequired,
 };
