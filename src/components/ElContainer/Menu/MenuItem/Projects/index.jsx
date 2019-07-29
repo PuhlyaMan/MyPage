@@ -1,7 +1,6 @@
 import React from 'react';
 import Project from './Project';
 import projects from './data/projects';
-import style from './style.css';
 
 export default function Projects() {
   const projElem = projects.map(element => (
@@ -19,9 +18,6 @@ export default function Projects() {
 
   return (
     <div>
-      <div className={style.header}>
-        Проекты
-      </div>
       {projElem}
     </div>
   );

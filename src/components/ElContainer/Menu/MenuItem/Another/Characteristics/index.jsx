@@ -9,7 +9,6 @@ export default function Characteristics() {
 
   return (
     <div className={style.block}>
-      <div className={style.caption}>О себе</div>
       <div className={style.container}>{characteristic}</div>
     </div>
   );

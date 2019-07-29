@@ -1,38 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Col } from 'react-bootstrap';
+import { Card, Accordion } from 'react-bootstrap';
 import style from './style.css';
 
 export default function MenuItem(props) {
-  const [check, setCheck] = useState(false);
-  const { children, showMenuItem, item, active } = props;
-  const styleItem = (item === active) ? style.menuitem_active : style.menuitem;
-
-  const renderItem = () => {
-    if (active !== item && !check) {
-      setCheck(true);
-    } else if (active === item && check) {
-      setCheck(false);
-    }
-    showMenuItem(item);
-  };
+  const { active, item, children } = props;
 
   return (
-    <Col>
-      <div
-        className={styleItem}
-        rule="menuitem"
-        onClick={renderItem}
-      >
-        { children }
-      </div>
-    </Col>
+    <Card className={style.card}>
+      <Card.Header className={style.header}>
+        <Accordion.Toggle as={Card.Header} eventKey={active}>
+          {children}
+        </Accordion.Toggle>
+      </Card.Header>
+      <Accordion.Collapse eventKey={active}>
+        <Card.Body>
+          {item()}
+        </Card.Body>
+      </Accordion.Collapse>
+    </Card>
   );
 }
 
 MenuItem.propTypes = {
   children: PropTypes.string.isRequired,
-  showMenuItem: PropTypes.func.isRequired,
-  item: PropTypes.number.isRequired,
-  active: PropTypes.number.isRequired,
+  item: PropTypes.func.isRequired,
+  active: PropTypes.string.isRequired,
 };

@@ -1,24 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Row } from 'react-bootstrap';
+import { Row, Accordion } from 'react-bootstrap';
 import MenuItem from './MenuItem';
+import Another from './MenuItem/Another';
+import Projects from './MenuItem/Projects';
+import Skils from './MenuItem/Skils';
+import style from './style.css';
 
-export default function Menu(props) {
-  const { updateActive, active } = props;
-  const showMenuItem = (value) => {
-    updateActive(value);
-  };
-  // TODO: Композиция?
+export default function Menu() {
   return (
     <Row>
-      <MenuItem active={active} showMenuItem={showMenuItem} item={1}>Проекты</MenuItem>
-      <MenuItem active={active} showMenuItem={showMenuItem} item={2}>Навыки</MenuItem>
-      <MenuItem active={active} showMenuItem={showMenuItem} item={3}>О себе</MenuItem>
+      <Accordion className={style.accordion}>
+        <MenuItem active="0" item={Projects}>Проекты</MenuItem>
+        <MenuItem active="1" item={Skils}>Навыки</MenuItem>
+        <MenuItem active="2" item={Another}>О себе</MenuItem>
+      </Accordion>
     </Row>
   );
 }
-
-Menu.propTypes = {
-  updateActive: PropTypes.func.isRequired,
-  active: PropTypes.number.isRequired,
-};

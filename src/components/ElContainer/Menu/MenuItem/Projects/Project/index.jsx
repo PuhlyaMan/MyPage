@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from '../style.css';
+import style from './style.css';
 
 export default function Project(props) {
   const { company, post, project, role, subsystem, duties, technologys } = props;

@@ -3,7 +3,6 @@ import skils from './data/skils';
 import style from './style.css';
 
 export default function Skils() {
-  // TODO: проблема с индексами
   const table = skils.map((element) => {
     const data = element.abilities.map(row => (
       <tr key={row.id}>
@@ -35,7 +34,6 @@ export default function Skils() {
 
   return (
     <div>
-      <div className={style.caption}>Навыки</div>
       {table}
     </div>
   );

@@ -12,7 +12,7 @@ export default function CommunicationForm() {
       </Form.Group>
       <Form.Row>
         <Form.Group as={Col}>
-          <Form.Label className={style.label}>Ваши имя и фамилиz</Form.Label>
+          <Form.Label className={style.label}>Ваши имя и фамилия</Form.Label>
           <Form.Control type="text" placeholder="Фамилия и имя" />
         </Form.Group>
         <Form.Group as={Col}>

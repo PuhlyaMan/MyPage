@@ -209,7 +209,7 @@ const skils = [
       },
       {
         id: 2,
-        name: 'Redmine',
+        name: 'Git',
         colYear: 1,
         lastYear: 'Настоящее время',
         level: 'Основы',

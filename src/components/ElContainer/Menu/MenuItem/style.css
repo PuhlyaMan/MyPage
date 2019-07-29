@@ -1,27 +1,14 @@
-.menuitem {
-  font-size: 24px;
-  background-color: #d167d6;
-  border-radius: 15px;
+.header {
   text-align: center;
-  margin: 10px 0;
-  padding: 3px;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  background-color: #b7dff7;
+
 }
 
-.menuitem:hover {
-  border: 1px solid #000000;
-  background-color: #6fbd55 ;
-  cursor: pointer;
-  /*font-weight: bold;*/
-  /*text-decoration: underline;*/
-}
-
-.menuitem_active {
-  font-size: 24px;
-  background-color: #6fbd55 ;
+.card {
+  margin: 5px 0;
   border-radius: 15px;
-  text-align: center;
-  margin: 10px 0;
-  padding: 3px;
-  border: 1px solid #000000;
-  cursor: pointer;
 }
