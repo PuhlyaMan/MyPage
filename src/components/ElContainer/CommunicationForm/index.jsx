@@ -16,7 +16,7 @@ const useStyle = makeStyles({
     borderRadius: '15px',
     margin: '40px 150px',
     padding: '15px',
-    backgroundColor: '#b7dff7',
+    // backgroundColor: '#b7dff7',
   },
 
   header: {
@@ -27,7 +27,6 @@ const useStyle = makeStyles({
   },
 
   textField: {
-    boxSizing: 'border-box',
     padding: '0 15px 0 0',
   },
 

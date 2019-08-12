@@ -4,7 +4,6 @@ import vk from './images/vk.png';
 import hh from './images/hh.png';
 import style from './style.css';
 
-// TODO: добавить ссылку на ВК
 export default function Footer() {
   return (
     <footer className={style.footer}>

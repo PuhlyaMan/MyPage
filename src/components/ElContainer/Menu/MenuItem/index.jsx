@@ -4,7 +4,7 @@ import style from './style.css';
 
 export default function MenuItem(props) {
   const { elem, active, showActiveMenu, item, children } = props;
-
+  
   const nameclass = active ? style.body_active : style.body_non_active;
   return (
     <div className={style.card}>

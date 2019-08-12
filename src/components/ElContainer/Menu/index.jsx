@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Grid from '@material-ui/core/Grid';
+import Zoom from 'react-reveal/Zoom';
 import MenuItem from './MenuItem';
 import Another from './MenuItem/Another';
 import Projects from './MenuItem/Projects';
@@ -13,22 +13,24 @@ export default function Menu() {
   }
 
   return (
-    <Grid container direction="column">
-      <Grid>
-        <MenuItem elem={1} active={elem === 1} showActiveMenu={showActiveMenu} item={Projects}>
-          Проекты
-        </MenuItem>
-      </Grid>
-      <Grid>
-        <MenuItem elem={2} active={elem === 2} showActiveMenu={showActiveMenu} item={Skils}>
-          Навыки
-        </MenuItem>
-      </Grid>
-      <Grid>
-        <MenuItem elem={3} active={elem === 3} showActiveMenu={showActiveMenu} item={Another}>
-          О себе
-        </MenuItem>
-      </Grid>
-    </Grid>
+    <Zoom top cascade>
+      <div>
+        <div>
+          <MenuItem elem={1} active={elem === 1} showActiveMenu={showActiveMenu} item={Projects}>
+            Проекты
+          </MenuItem>
+        </div>
+        <div>
+          <MenuItem elem={2} active={elem === 2} showActiveMenu={showActiveMenu} item={Skils}>
+            Навыки
+          </MenuItem>
+        </div>
+        <div>
+          <MenuItem elem={3} active={elem === 3} showActiveMenu={showActiveMenu} item={Another}>
+            О себе
+          </MenuItem>
+        </div>
+      </div>
+    </Zoom>
   );
 }

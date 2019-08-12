@@ -1,0 +1,30 @@
+.header {
+  text-align: center;
+  margin: 20em 0;
+}
+
+.h1 {
+  font-size: 50px;
+  animation-name: zoom;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+}
+
+.button {
+  filter: opacity(0);
+  animation-name: visible;
+  animation-duration: 1s;
+  animation-delay: 3s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoom {
+  0% { font-size: 0px; }
+  100% { font-size: 50px; }
+}
+
+@keyframes visible {
+  0% { filter: opacity(0) }
+  100% { filter: opacity(1) }
+}
