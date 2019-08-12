@@ -85,6 +85,20 @@ const skils = [
         colYear: 1,
         lastYear: 'Настоящее время',
         level: 'Средний',
+      },
+      {
+        id: 6,
+        name: 'React Bootstrap',
+        colYear: 1,
+        lastYear: 'Настоящее время',
+        level: 'Средний',
+      },
+      {
+        id: 7,
+        name: 'Material-UI',
+        colYear: 1,
+        lastYear: 'Настоящее время',
+        level: 'Средний',
       }
     ],
   },
@@ -101,9 +115,16 @@ const skils = [
       },
       {
         id: 2,
-        name: 'GWT',
-        colYear: 2,
-        lastYear: '2016',
+        name: 'MySQL',
+        colYear: 1,
+        lastYear: '2019',
+        level: 'Основы',
+      },
+      {
+        id: 3,
+        name: 'Oracle',
+        colYear: 1,
+        lastYear: '2019',
         level: 'Основы',
       }
     ],
@@ -155,20 +176,13 @@ const skils = [
       },
       {
         id: 4,
-        name: 'WSDL',
-        colYear: 2,
-        lastYear: '2016',
-        level: 'Основы',
-      },
-      {
-        id: 5,
         name: 'HTML',
         colYear: 1,
         lastYear: 'Настоящее время',
         level: 'Средний',
       },
       {
-        id: 6,
+        id: 5,
         name: 'CSS',
         colYear: 1,
         lastYear: 'Настоящее время',
@@ -348,6 +362,13 @@ const skils = [
         colYear: 1,
         lastYear: 'Настоящее время',
         level: 'Основы',
+      },
+      {
+        id: 4,
+        name: 'react-reval',
+        colYear: 1,
+        lastYear: 'Настоящее время',
+        level: 'Хорошо',
       }
     ],
   }
