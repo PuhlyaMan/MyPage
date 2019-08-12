@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import Grid from '@material-ui/core/Grid';
 import Info from './Info';
 import Contacts from './Contacts';
 import style from './style.css';
@@ -8,15 +8,15 @@ import AvatarImg from './images/avatar_mini.jpg';
 
 export default function AboutMe() {
   return (
-    <Row>
-      <Col xs="auto">
+    <Grid container>
+      <Grid item>
         <img
           className={style.image}
           src={AvatarImg}
           alt="Ошибка загрузки фото!"
         />
-      </Col>
-      <Col>
+      </Grid>
+      <Grid item xs>
         <div className={style.info}>
           <Info title="ФИО: ">Костин Сергей Станиславович</Info>
           <Info title="Родился: ">30.06.1994г.р. (25 лет)</Info>
@@ -27,7 +27,7 @@ export default function AboutMe() {
           </Info>
           <Contacts />
         </div>
-      </Col>
-    </Row>
+      </Grid>
+    </Grid>
   );
 }

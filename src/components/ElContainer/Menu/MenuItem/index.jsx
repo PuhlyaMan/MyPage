@@ -8,7 +8,7 @@ export default function MenuItem(props) {
   const nameclass = active ? style.body_active : style.body_non_active;
   return (
     <div className={style.card}>
-      <div className={style.header} onClick={() => showActiveMenu(!active, !active ? elem : 0)}>
+      <div className={style.header} onClick={() => showActiveMenu(!active ? elem : 0)}>
         {children}
       </div>
       <div className={nameclass}>

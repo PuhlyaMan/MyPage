@@ -1,1 +1,24 @@
+.footer {
+  /*background-color: #b7dff7;*/
+  text-align: center;
+}
 
+.git, .vk, .hh {
+  display: inline-block;
+  margin: 10px 20px;
+}
+
+.git_img, .vk_img, .hh_img {
+  max-width: 200px;
+  display: inline-block;
+}
+
+.hh_img {
+  max-height: 50px;
+}
+
+.copy {
+  padding: 20px 0;
+  font-weight: bold;
+  font-size: 18px;
+}

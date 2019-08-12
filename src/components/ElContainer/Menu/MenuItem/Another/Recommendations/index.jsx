@@ -1,5 +1,5 @@
 import React from 'react';
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import Tooltip from '@material-ui/core/Tooltip';
 import recommendations from './data/recommendations';
 import style from '../style.css';
 import Info from './images/info.png';
@@ -17,23 +17,18 @@ export default function Recommendations() {
     <div className={style.block}>
       <div className={style.caption}>
         Рекомендации
-        <OverlayTrigger
-          key="right"
+        <Tooltip
+          disableFocusListener
+          title="При необходимости, спрашивайте контактные данные для связи с рекомендатором"
           placement="right"
-          overlay={
-            <Tooltip id="tooltip-right">
-              При необходимости, спрашивайте контактные данные для связи с рекомендатором
-            </Tooltip>
-          }
         >
           <img
             className={style.image}
             src={Info}
             alt="Ошибка загрузки"
           />
-        </OverlayTrigger>
+        </Tooltip>
       </div>
-
       <div className={style.container}>{recommendation}</div>
     </div>
   );

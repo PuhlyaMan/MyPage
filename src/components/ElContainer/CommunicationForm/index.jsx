@@ -1,32 +1,92 @@
 import React from 'react';
-import { Form, Button, Col } from 'react-bootstrap';
-import style from './style.css';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/styles';
+
+const useStyle = makeStyles({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+
+  form: {
+    border: '3px solid #ced4da',
+    borderRadius: '15px',
+    margin: '40px 150px',
+    padding: '15px',
+    backgroundColor: '#b7dff7',
+  },
+
+  header: {
+    fontSize: '30px',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    margin: '0 0 20px 0',
+  },
+
+  textField: {
+    boxSizing: 'border-box',
+    padding: '0 15px 0 0',
+  },
+
+  icon: {
+    margin: '0 0 0 5px',
+  },
+
+});
 
 export default function CommunicationForm() {
+  const classes = useStyle();
+
   return (
-    <Form className={style.form}>
-      <div className={style.header}>Форма обратной связи</div>
-      <Form.Group>
-        <Form.Label className={style.label}>Цель обращения</Form.Label>
-        <Form.Control type="text" placeholder="Цель обращения" />
-      </Form.Group>
-      <Form.Row>
-        <Form.Group as={Col}>
-          <Form.Label className={style.label}>Ваши имя и фамилия</Form.Label>
-          <Form.Control type="text" placeholder="Фамилия и имя" />
-        </Form.Group>
-        <Form.Group as={Col}>
-          <Form.Label className={style.label}>Ваш Email</Form.Label>
-          <Form.Control type="email" placeholder="Email" />
-        </Form.Group>
-      </Form.Row>
-      <Form.Group>
-        <Form.Label className={style.label}>Содержание обращения</Form.Label>
-        <Form.Control as="textarea" rows="7" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
+    <form className={classes.form}>
+      <div className={classes.header}>Форма обратной связи</div>
+      <div className={classes.container}>
+        <TextField
+          id="target"
+          label="Цель обращения"
+          margin="normal"
+          variant="outlined"
+          className={classes.textField}
+          fullWidth
+        />
+        <Grid item xs={6}>
+          <TextField
+            id="name"
+            label="Ваши имя и фамилия"
+            margin="normal"
+            variant="outlined"
+            className={classes.textField}
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            id="email"
+            label="Ваш Email"
+            margin="normal"
+            variant="outlined"
+            className={classes.textField}
+            fullWidth
+          />
+        </Grid>
+        <TextField
+          id="target"
+          label="Содержание обращения"
+          margin="normal"
+          variant="outlined"
+          multiline
+          rows={4}
+          className={classes.textField}
+          fullWidth
+        />
+      </div>
+      <Button type="submit" size="large" variant="contained" color="primary">
         Отправить
+        <Icon className={classes.icon}>send</Icon>
       </Button>
-    </Form>
+    </form>
   );
 }
