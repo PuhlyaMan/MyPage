@@ -1,24 +1,53 @@
 .footer {
-  /*background-color: #b7dff7;*/
   text-align: center;
 }
 
-.git, .vk, .hh {
+.git, .vk, .hh, .git > .git_img, .vk > .vk_img, .hh > .hh_img {
   display: inline-block;
   margin: 10px 20px;
-}
-
-.git_img, .vk_img, .hh_img {
   max-width: 200px;
-  display: inline-block;
+  max-height: 50px;
 }
 
-.hh_img {
-  max-height: 50px;
+.git, .vk, .hh {
+  animation-name: falling;
+  animation-duration: 2s;
+  animation-timing-function: linear; 
+}
+
+.git_img:hover, .vk_img:hover, .hh_img:hover {
+  animation-name: jump;
+  animation-duration: 1s;
+  animation-iteration-count: infinite; 
+  animation-timing-function: linear;
+}
+
+@keyframes jump {
+  0% {transform: translateY(0); }
+  50% {transform: translateY(-20px);}
+  100% {transform: translateY(0);}
+}
+
+@keyframes falling {
+  0% {transform: translateY(-50rem); }
+  50% {transform: translateY(0);}
+  80% {transform: translateY(-60px);}
+  100% {transform: translateY(0px);}
 }
 
 .copy {
   padding: 20px 0;
   font-weight: bold;
-  font-size: 18px;
+  opacity: 0;
+  animation-name: show;
+  animation-duration: 1000ms;
+  animation-delay: 2000ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+@keyframes show {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-import git from './images/github.png';
-import vk from './images/vk.png';
-import hh from './images/hh.png';
+import git from './icon/github.png';
+import vk from './icon/vk.png';
+import hh from './icon/hh.png';
 import style from './style.css';
 
 export default function Footer() {

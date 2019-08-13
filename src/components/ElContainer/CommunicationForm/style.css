@@ -1,9 +1,20 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .form {
   border: 3px solid #ced4da;
   border-radius: 15px;
-  margin: 40px 0;
+  margin: 40px 150px;
   padding: 15px;
-  background-color: #b7dff7 ;
+  opacity: 0;
+  animation-name: show;
+  animation-duration: 1000ms;
+  animation-delay: 2000ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 
 .header {
@@ -13,6 +24,15 @@
   margin: 0 0 20px 0;
 }
 
-.label {
-  font-size: 20px;
+.textField {
+  padding: 0 15px 0 0;
+}
+
+.icon {
+  margin: 0 0 0 5px;
+}
+
+@keyframes show {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }

@@ -5,23 +5,37 @@
 
 .h1 {
   font-size: 50px;
+  filter: opacity(0);
+}
+
+.one, .two, .three {
   animation-name: zoom;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.two {
+  animation-delay: 2s;
+}
+
+.three {
+  animation-delay: 4s;
 }
 
 .button {
   filter: opacity(0);
   animation-name: visible;
   animation-duration: 1s;
-  animation-delay: 3s;
+  animation-delay: 6s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
 
 @keyframes zoom {
-  0% { font-size: 0px; }
-  100% { font-size: 50px; }
+  0% { font-size: 0px; filter: opacity(1) }
+  50% { font-size: 50px; filter: opacity(1) }
+  100% { font-size: 50px; filter: opacity(1) }
 }
 
 @keyframes visible {
