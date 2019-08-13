@@ -3,9 +3,17 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/styles';
 import style from './style.css';
 
+const useStyle = makeStyles({
+  textField: {
+    padding: '0 15px 0 0',
+  },
+});
+
 export default function CommunicationForm() {
+  const classes = useStyle();
   return (
     <form className={style.form}>
       <div className={style.header}>Форма обратной связи</div>
@@ -15,7 +23,7 @@ export default function CommunicationForm() {
           label="Цель обращения"
           margin="normal"
           variant="outlined"
-          className={style.textField}
+          className={classes.textField}
           fullWidth
         />
         <Grid item xs={6}>
@@ -24,7 +32,7 @@ export default function CommunicationForm() {
             label="Ваши имя и фамилия"
             margin="normal"
             variant="outlined"
-            className={style.textField}
+            className={classes.textField}
             fullWidth
           />
         </Grid>
@@ -34,7 +42,7 @@ export default function CommunicationForm() {
             label="Ваш Email"
             margin="normal"
             variant="outlined"
-            className={style.textField}
+            className={classes.textField}
             fullWidth
           />
         </Grid>
@@ -45,7 +53,7 @@ export default function CommunicationForm() {
           variant="outlined"
           multiline
           rows={4}
-          className={style.textField}
+          className={classes.textField}
           fullWidth
         />
       </div>

@@ -10,7 +10,7 @@ import './style.css';
 export default function ElContainer() {
   const [show, setShowInfo] = useState(false);
 
-  if (!show) {
+  if (show) {
     return (
       <Container maxWidth="xl">
         <AboutMe />
