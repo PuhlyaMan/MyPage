@@ -17,7 +17,7 @@ export default function AboutMe() {
     <Grid container>
       <Grid item>
         <img
-          className={style.image}
+          className={style.avatar}
           src={AvatarImg}
           alt="Ошибка загрузки фото!"
         />
@@ -25,17 +25,23 @@ export default function AboutMe() {
       <Grid item xs>
         <div className={style.info}>
           <table className={style.table}>
+            <colgroup>
+              <col className={style.col_title} />
+              <col span="1" className={style.col_data} />
+            </colgroup>
             <thead />
             <tbody>
               <TableRow title="ФИО: ">Костин Сергей Станиславович</TableRow>
               <TableRow title="Родился: ">
                 {`30.06.1994г.р. (${calculateAge()} лет)`}
               </TableRow>
+              <TableRow title="Семейное положение: ">Холост</TableRow>
               <TableRow title="Место жительства: ">г. Нижний Новгород</TableRow>
               <TableRow title="Образование: ">
                 Высшее. Окончил в 2016 году МИВлГУ имени А.Г. и Н.Г.
                 Столетовых по специальности &quot;Программная инженерия&quot;.
               </TableRow>
+              <TableRow title="Готовность к командировкам: ">К командировкам готов</TableRow>
             </tbody>
           </table>
         </div>

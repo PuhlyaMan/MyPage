@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import style from '../style.css';
+import style from './style.css';
 
-import contact from '../images/contact.jpg';
+import contact from '../images/contact.png';
+import telephone from '../images/telephone.png';
+import gmail from '../images/gmail.png';
+import skype from '../images/skype.png';
 
 export default function Contacts() {
   const [show, showContact] = useState(false);
@@ -19,18 +22,24 @@ export default function Contacts() {
         />
       </div>
       <div className={contactClass}>
-        <li className={style.item}>
-          <span>Моб. телефон: </span>
-          <a href="tel:+7(929)0518725">+7(929)051-87-25</a>
-        </li>
-        <li className={style.item}>
-          <span>Эл. почта: </span>
-          <a href="mailto:dr.zad1994@gmail.com">dr.zad1994@gmail.com</a>
-        </li>
-        <li className={style.item}>
-          <span>Skype: </span>
-          advokat_hp
-        </li>
+        <div>
+          <li className={style.item}>
+            <img className={style.contact_icon} src={telephone} alt="telephone" />
+            <a href="tel:+7(929)0518725">
+              <span className={style.value}>+7(929)051-87-25</span>
+            </a>
+          </li>
+          <li className={style.item}>
+            <img className={style.contact_icon} src={gmail} alt="telephone" />
+            <a href="mailto:dr.zad1994@gmail.com">
+              <span className={style.value}>dr.zad1994@gmail.com</span>
+            </a>
+          </li>
+          <li className={style.item}>
+            <img className={style.contact_icon} src={skype} alt="telephone" />
+            <span className={style.value}>advokat_hp</span>
+          </li>
+        </div>
       </div>
     </div>
   );

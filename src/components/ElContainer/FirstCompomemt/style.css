@@ -10,7 +10,7 @@
 
 .one, .two, .three {
   animation-name: zoom;
-  animation-duration: 2s;
+  animation-duration: 1500ms;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
@@ -34,7 +34,7 @@
 
 @keyframes zoom {
   0% { font-size: 0px; filter: opacity(1) }
-  50% { font-size: 50px; filter: opacity(1) }
+  80% { font-size: 50px; filter: opacit   y(1) }
   100% { font-size: 50px; filter: opacity(1) }
 }
 

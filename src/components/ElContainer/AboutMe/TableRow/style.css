@@ -1,0 +1,22 @@
+.title, .data, .image {
+  opacity: 0;
+  animation-name: show;
+  animation-duration: 1000ms;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.title {
+  font-weight: bold;
+}
+
+@keyframes show {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+td {
+  border: 10px solid #ffffff;
+}
