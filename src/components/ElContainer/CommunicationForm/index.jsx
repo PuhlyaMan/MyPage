@@ -9,6 +9,7 @@ import style from './style.css';
 const useStyle = makeStyles({
   textField: {
     padding: '0 15px 0 0',
+    boxSizing: 'border-box',
   },
 });
 

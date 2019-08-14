@@ -1,3 +1,7 @@
+.skils {
+  margin: 0 120px 50px;
+}
+
 .header {
   caption-side: top;
   text-align: center;
@@ -11,8 +15,6 @@
   border-collapse: collapse;
   font-size: 20px;
   text-align: center;
-  width: 100%;
-  margin: 0 0 50px 0;
 }
 
 .table tr td, .table tr th {
@@ -22,4 +24,12 @@
 
 .table tr th {
   background-color: #2b83cc;
+}
+
+.col_name {
+  width: 40%;
+}
+
+.col_other {
+  width: 20%;
 }

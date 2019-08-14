@@ -27,7 +27,7 @@ export default function AboutMe() {
           <table className={style.table}>
             <colgroup>
               <col className={style.col_title} />
-              <col span="1" className={style.col_data} />
+              <col className={style.col_data} />
             </colgroup>
             <thead />
             <tbody>

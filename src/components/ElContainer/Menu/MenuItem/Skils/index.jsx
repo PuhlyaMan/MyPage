@@ -14,20 +14,26 @@ export default function Skils() {
     ));
 
     return (
-      <table className={style.table} key={element.id}>
-        <caption className={style.header}>{element.header}</caption>
-        <thead>
-          <tr>
-            <th>Название</th>
-            <th>Лет использовался</th>
-            <th>Последний год использования</th>
-            <th>Уровень</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data}
-        </tbody>
-      </table>
+      <div className={style.skils}>
+        <table className={style.table} key={element.id}>
+          <caption className={style.header}>{element.header}</caption>
+          <colgroup>
+            <col className={style.col_name} />
+            <col span="3" className={style.col_other} />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Название</th>
+              <th>Лет использовался</th>
+              <th>Последний год использования</th>
+              <th>Уровень</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data}
+          </tbody>
+        </table>
+      </div>
     );
   });
 

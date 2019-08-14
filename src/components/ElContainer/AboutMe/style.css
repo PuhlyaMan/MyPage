@@ -18,8 +18,9 @@
 
 .table {
   table-layout: fixed;
-  font-size: 25px;
+  font-size: 22px;
   width: 100%;
+  border-spacing: 15px;
 }
 
 .col_title {

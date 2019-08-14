@@ -28,8 +28,8 @@
 .body_active {
   margin: 10px 0;
   padding: 20px 30px;
-  border: 1px solid #ddd;
-  border-radius: 15px;
+  /*border: 1px solid #ddd;
+  border-radius: 15px;*/
   animation-name: active;
   animation-duration: 1s;
   animation-iteration-count: 1;
